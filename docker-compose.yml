@@ -4,7 +4,7 @@ services:
   crontab:
     build: .
     command:
-      - "* * * * * ls"
+      - "* * * * * ls "
       - "* * * * * bash /app/test.sh"
     volumes:
       - .:/app

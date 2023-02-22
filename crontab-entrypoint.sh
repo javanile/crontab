@@ -2,6 +2,7 @@
 set -e
 
 crontab=/var/spool/cron/crontabs/root
+container_id=$(basename $(cat /proc/1/cpuset) | head -c 12)
 
 >$crontab
 
