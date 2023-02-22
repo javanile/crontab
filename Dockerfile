@@ -17,10 +17,10 @@ RUN apk add --no-cache \
 
 COPY crontab-entrypoint.sh /usr/local/bin/
 
-RUN mkdir /app
+RUN mkdir /app && rm -fr /etc/periodic
 
 WORKDIR /app
 
 ENTRYPOINT ["crontab-entrypoint.sh"]
 
-CMD ["crond", "-f", "-L", "/dev/stdout", "-l", "0", "-d", "0"]
+CMD ["crond", "-f", "-L", "/dev/stdout", "-l", "8"]
