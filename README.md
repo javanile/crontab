@@ -71,7 +71,7 @@ services:
     volumes:
       ## Mount local path '.' over '/app' to accessing on script file-system 
       - .:/app      
-      ## Mount 'docker.sock' to enable your scripts running 'docker' and 'docker compose' as end-user 
+      ## Mount 'docker.sock' to enable your scripts running 'docker compose' as end-user 
       - /var/run/docker.sock:/var/run/docker.sock
 ```
 
