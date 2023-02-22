@@ -15,6 +15,12 @@ RUN apk add --no-cache \
     file \
     diffutils
 
+COPY crontab-entrypoint.sh /usr/local/bin/
+
 RUN mkdir /app
 
-CMD ["crond", "-f"]
+WORKDIR /app
+
+ENTRYPOINT ["crontab-entrypoint.sh"]
+
+CMD ["crond", "-f", "-L", "/dev/stdout", "-l", "0", "-d", "0"]

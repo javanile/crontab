@@ -1,5 +1,6 @@
 
 build:
+	@chmod +x crontab-entrypoint.sh
 	@docker-compose build crontab
 
 

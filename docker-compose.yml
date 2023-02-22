@@ -3,6 +3,9 @@ version: "3"
 services:
   crontab:
     build: .
+    command:
+      - "* * * * * ls"
+      - "* * * * * bash /app/test.sh"
     volumes:
       - .:/app
       - ./crontab:/etc/crontab
