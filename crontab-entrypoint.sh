@@ -4,6 +4,8 @@ set -e
 crontab=/var/spool/cron/crontabs/root
 container_id=$(basename $(cat /proc/1/cpuset) | head -c 12)
 
+#com.docker.compose.project
+
 >$crontab
 
 if [[ "$1" =~ ^[1-9*] ]]; then
