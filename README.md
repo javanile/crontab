@@ -82,3 +82,7 @@ By default `javanile/crontab` logs on `stdout` visible with the following comman
 ```shell
 $ docker compose logs -f crontab
 ```
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
