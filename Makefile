@@ -19,6 +19,7 @@ test-docker-ps:
 	@docker compose run --rm crontab docker ps
 
 test-up: build
+	@echo "* * * * * date >> debug.log" > crontab
 	@docker compose up crontab
 
 test-bash: build
