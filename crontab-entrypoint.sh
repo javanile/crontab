@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 set -e
 
+container_id=$(hostname)
 crontab=/var/spool/cron/crontabs/root
-container_id=$(basename $(cat /proc/1/cpuset) | head -c 12)
 
-#com.docker.compose.project
+export COMPOSE_PROJECT_NAME=$(docker inspect "$container_id" | grep '"com.docker.compose.project"' | cut -d'"' -f4)
 
 >$crontab
 
