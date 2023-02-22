@@ -4,4 +4,6 @@ services:
   crontab:
     build: .
     volumes:
+      - .:/app
       - ./crontab:/etc/crontab
+      - /var/run/docker.sock:/var/run/docker.sock
