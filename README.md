@@ -65,7 +65,7 @@ version: "3"
 
 services:
   crontab:
-    build: .
+    image: javanile/crontab
     command:    
       - "* * * * * bash /app/my-project-script.sh"
     volumes:
