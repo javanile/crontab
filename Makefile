@@ -5,7 +5,7 @@ build:
 
 release:
 	@git add .
-	@git commit -am "New release"
+	@git commit -am "New release!"
 	@git push
 	@docker login -u javanile
 	@docker build -t "javanile/crontab:latest" .
