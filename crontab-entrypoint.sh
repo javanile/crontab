@@ -8,7 +8,7 @@ export COMPOSE_PROJECT_NAME=$(docker inspect "$container_id" | grep '"com.docker
 
 >$crontab
 
-if [[ "$1" =~ ^[1-9*] ]]; then
+if [[ "$1" =~ ^[0-9*] ]]; then
   while test $# -gt 0; do
     echo "$1" >> $crontab
     shift
