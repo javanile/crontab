@@ -4,6 +4,9 @@ build:
 	@docker-compose build crontab
 
 release:
+	@git add .
+	@git commit -am "New release"
+	@git push
 	@docker login -u javanile
 	@docker build -t "javanile/crontab:latest" .
 	@docker push "javanile/crontab:latest"
@@ -26,3 +29,7 @@ test-up: build
 
 test-bash: build
 	@docker compose run --rm crontab bash
+
+test-log: build
+	@docker compose up --force-recreate crontab
+	@docker compose logs -f crontab
