@@ -55,7 +55,7 @@ The classic `/etc/crontab` is supported. But DON'T refer to user on crontab.
 version: "3"
 
 services:
-  mysql:
+  crontab:
     image: javanile/crontab
     volumes:      
       - ./crontab:/etc/crontab
