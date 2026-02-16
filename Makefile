@@ -7,9 +7,13 @@ release:
 	@git add .
 	@git commit -am "New release!"
 	@git push
-	@docker login -u javanile
+	@docker login -u yafb
 	@docker build -t "javanile/crontab:latest" .
 	@docker push "javanile/crontab:latest"
+
+clean:
+	@docker compose down --rmi all --volumes --remove-orphans
+	@rm -f debug.log crontab
 
 ## ====
 ## Test
@@ -21,10 +25,12 @@ test-crontab-file:
 test-docker-ps:
 	@docker compose run --rm crontab docker ps
 
-test-up: build
+test-up: clean build
 	@rm -f debug.log date.log
 	@echo "* * * * * date >> /app/debug.log" > crontab
 	@echo "* * * * * cd /app && docker-compose ps >> /app/debug.log" >> crontab
+	@echo "#!/bin/sh" > test.sh
+	@echo "echo \"Hello World!\"" >> test.sh
 	@docker compose up crontab
 
 test-bash: build

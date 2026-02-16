@@ -1,4 +1,4 @@
-FROM docker:20.10.23-cli-alpine3.17
+FROM docker:29.2.1-cli-alpine3.23
 
 RUN apk add --no-cache \
     git \
