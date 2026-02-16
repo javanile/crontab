@@ -3,10 +3,12 @@ build:
 	@chmod +x crontab-entrypoint.sh
 	@docker-compose build crontab
 
-release:
+push:
 	@git add .
 	@git commit -am "New release!" || true
 	@git push
+
+release: push
 	@docker login -u yafb
 	@docker build -t "javanile/crontab:latest" .
 	@docker push "javanile/crontab:latest"

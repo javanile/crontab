@@ -12,6 +12,14 @@
 
 # 🕓 crontab
 
+[![Docker Version](https://img.shields.io/badge/docker-29.0.0-2496ED?logo=docker&logoColor=white)](https://github.com/javanile/crontab)
+[![Base OS](https://img.shields.io/badge/base%20os-alpine-0D597F?logo=alpinelinux&logoColor=white)](https://github.com/javanile/crontab)
+[![License](https://img.shields.io/github/license/javanile/crontab)](https://github.com/javanile/crontab/blob/main/LICENSE)
+[![Last Updated](https://img.shields.io/github/last-commit/javanile/crontab)](https://github.com/javanile/crontab/commits/main)
+[![Docker Pulls](https://img.shields.io/docker/pulls/javanile/crontab)](https://hub.docker.com/r/javanile/crontab)
+[![Docker Image Size](https://img.shields.io/docker/image-size/javanile/crontab/latest)](https://hub.docker.com/r/javanile/crontab)
+[![Docker Hub](https://img.shields.io/badge/dockerhub-javanile%2Fcrontab-2496ED?logo=docker&logoColor=white)](https://hub.docker.com/r/javanile/crontab)
+
 > The best **crontab** container for your docker compose file.
 
 ## Introduction and benefits
